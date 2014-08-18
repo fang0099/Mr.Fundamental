@@ -7,30 +7,25 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution {
-public:
-    vector<int> preorderTraversal(TreeNode *root) {
+    void preorderTraversal(TreeNode *root) {
         
-        vector<int> result;
         if(root == NULL)
-            return result;
+            return;
             
         stack<TreeNode*> s;
-        TreeNode *p = root;
+        TreeNode *curr = root;
         
-        while(p!=NULL || !s.empty())
+        while(curr!=NULL || !s.empty())
         {
-            while(p!=NULL)
+            while(curr!=NULL)
             {
-                result.push_back(p->val);
-                s.push(p);
-                p = p->left;
+                printf("%d ",curr->val);
+                s.push(curr);
+                curr = curr->left;
             }
-            p = s.top();
+            curr = s.top();
             s.pop();
-            p = p->right;
+            curr = curr->right;
         }
-        
-        return result;
+
     }
-};

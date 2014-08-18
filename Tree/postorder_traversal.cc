@@ -7,15 +7,12 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution {
-public:
-    vector<int> postorderTraversal(TreeNode *root) {
-        
-        vector<int> result;
+    void postorderTraversal(TreeNode *root)
+	{   
         if(root == NULL)
-            return result;
+            return;
             
-        stack<TreeNode*> s;ls
+        stack<TreeNode*> s;
         
         TreeNode *curr = root;
         TreeNode *previsited = NULL;
@@ -31,7 +28,7 @@ public:
             
             if(curr->right == NULL || curr->right == previsited)
             {
-                result.push_back(curr->val);
+                printf("%d ",curr->val);
                 previsited = curr;
                 s.pop();
                 curr = NULL;
@@ -39,7 +36,5 @@ public:
             else
                 curr = curr->right;
         }
-        
-        return result;
+    
     }
-};
