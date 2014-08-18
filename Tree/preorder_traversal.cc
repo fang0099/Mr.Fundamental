@@ -9,23 +9,23 @@
  */
 void preorderTraversal(TreeNode *root)
 {
-	if(root == NULL)
-	  return;
+    if(root == NULL)
+      return;
 
-	stack<TreeNode*> s;
-	TreeNode *curr = root;
+    stack<TreeNode*> s;
+    TreeNode *curr = root;
 
-	while(curr!=NULL || !s.empty())
-	{
-		while(curr!=NULL)
-		{
-			printf("%d ",curr->val);
-			s.push(curr);
-			curr = curr->left;
-		}
-		curr = s.top();
-		s.pop();
-		curr = curr->right;
-	}
+    while(curr!=NULL || !s.empty())
+    {
+        while(curr!=NULL)
+        {
+            printf("%d ",curr->val);
+            s.push(curr);
+            curr = curr->left;
+        }
+        curr = s.top();
+        s.pop();
+        curr = curr->right;
+    }
 
 }
