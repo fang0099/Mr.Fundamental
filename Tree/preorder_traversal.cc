@@ -7,6 +7,19 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+//recursively
+void preorderTraversal(TreeNode *root)
+{
+    if(root!=NULL)
+    {
+        printf("%d ",root->val);
+        preorderTraversal(root->left);
+        preorderTraversal(root->right);
+    }
+}
+
+//iteratively
 void preorderTraversal(TreeNode *root)
 {
     if(root == NULL)

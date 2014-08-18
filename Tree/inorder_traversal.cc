@@ -7,6 +7,19 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+//recursively
+void inorderTraversal(TreeNode *root)
+{
+    if(root!=NULL)
+    {
+        inorderTraversal(root->left);
+        printf("%d ",root->val);
+        inorderTraversal(root->right);
+    }
+}
+
+//iteratively
 void inorderTraversal(TreeNode *root) 
 {
     if(root == NULL)
