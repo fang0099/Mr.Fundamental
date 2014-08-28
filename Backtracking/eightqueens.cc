@@ -1,18 +1,18 @@
 #include <stdio.h>
-#define EIGHT 8
+#define NUM 8
 
-static int a[EIGHT] = {0};
+static int a[NUM] = {0};
 
 void print()
 {
-    for(int i = 0; i < EIGHT; ++i)
+    for(int i = 0; i < NUM; ++i)
     {
-        for(int j = 0; j <a[i];++j)
+        for(int j = 0; j < a[i];++j)
         {
             printf("□");
         }
         printf("■");
-        for(int j = a[i]+1; j < EIGHT;++j)
+        for(int j = a[i] + 1; j < NUM;++j)
         {
             printf("□");
         }
@@ -28,8 +28,8 @@ bool isValid(int index, int value)
     {
         curr_value = a[curr_index];
         if(curr_value == value ||
-           curr_value + curr_index == value + index ||
-           curr_value - curr_index == value - index)
+            curr_value + curr_index == value + index ||
+            curr_value - curr_index == value - index)
         {
             return false;
         }
@@ -39,12 +39,12 @@ bool isValid(int index, int value)
 
 void eightQueen(int index, int &count)
 {
-    for(int row = 0; row < EIGHT ; ++row)
+    for(int row = 0; row < NUM ; ++row)
     {
         if(isValid(index,row))
         {
             a[index] = row;
-            if(index == EIGHT - 1)
+            if(index == NUM - 1)
             {
                 ++count;
                 printf("%d\n",count);
@@ -62,6 +62,6 @@ int main()
     int count = 0;
     eightQueen(0, count);
     printf("total number: %d\n",count);
-    
+
     return 0;
 }
