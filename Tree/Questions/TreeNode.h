@@ -10,7 +10,7 @@ struct TreeNode
     TreeNode(int x):val(x),left(NULL),right(NULL){}
 };
 
-static int a[] = {1,2,3,4,5,-1,6,7};
+static int a[] = {1,2,3,4,5,8,6,7};
 
 TreeNode* makeTree(int a[], int i,int length)
 {
