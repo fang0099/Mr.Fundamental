@@ -13,10 +13,12 @@ void GetNext(char *p, int next[])
         {
             k++;
             j++;
+            next[j] = k;
+        /*   优化代码待理解
             if(p[j]!=p[k])
               next[j] = k;
             else
-              next[j] = next[k];
+              next[j] = next[k];*/
         }
         else
         {
